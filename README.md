@@ -59,21 +59,6 @@ Messages can be exchanged seamlessly, allowing real-time understanding through t
 
 ---
 
-## 🎬 Demo Video
-
-Experience Ishara in action — translating Egyptian Sign Language and enabling inclusive conversations!  
-
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
-
-> 🔁 Replace `VIDEO_ID` with your YouTube video’s ID once uploaded.  
-
----
-
-## 📜 License
-
-This project is open-source and available under the **MIT License**.  
-
----
 
 ## 👥 Team
 
