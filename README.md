@@ -47,41 +47,6 @@ This dataset was used to **train, test, and validate** the machine learning mode
 
 ---
 
-## 💡 How to Use
-
-1. Run the system and allow access to your camera.  
-2. Use the video feed to perform continuous sign language gestures.  
-3. View the real-time translation in the text box or output panel.  
-
----
-
-## 🤝 Contributing
-
-We welcome all contributions to **Ishara**! Whether you're improving the ML model, refining the UI, or adding new features:  
-
-1. **Fork** the repository  
-2. **Create** a new branch:  
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. **Commit** your changes:  
-   ```bash
-   git commit -m "Add your feature"
-   ```
-4. **Push** to your branch:  
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. **Open a Pull Request** and describe your changes  
-
----
-
-## 📜 License
-
-This project is open-source and available under the **MIT License**.  
-
----
-
 ## 👥 Team
 
 Developed by the **Ishara Team** — students at the *Faculty of Computers & Information Technology, Benha University.*  
