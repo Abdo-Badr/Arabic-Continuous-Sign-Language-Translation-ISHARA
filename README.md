@@ -1,64 +1,75 @@
-# 🖐️ Ishara: Real-Time Egyptian Sign Language Translation & Chat System
+## 🖐️ Ishara: Real-Time Egyptian Sign Language Translation & Chat System
 
-**Ishara** is Egypt’s **first real-time Egyptian Sign Language translation and chat system**, designed to bridge communication gaps for the **deaf and hard-of-hearing community**.  
-It enables **bi-directional communication** — translating sign language gestures to text and providing an **interactive chat platform** for inclusive conversations.  
-
----
-
-## 🎯 Project Overview
-
-Ishara integrates **Machine Learning (ML)**, **Computer Vision (CV)**, and **Natural Language Processing (NLP)** to achieve real-time translation between **Egyptian Sign Language and written text**.  
-The addition of a **chat system** allows users to interact seamlessly — whether using signs or text — making daily communication more accessible, natural, and inclusive.  
+**Ishara** is Egypt’s **first real-time Egyptian Sign Language translation and chat system**, designed to break communication barriers for the **deaf and hard-of-hearing community**.  
+It offers two core applications — a **Translation App** and a **Chat App** — that work together to provide accessible, inclusive communication.
 
 ---
 
-## ✨ Key Features
+## 🚀 Overview
 
-- ⚡ **Real-Time Translation:** Converts Egyptian Sign Language gestures into text — instantly.  
-- 💬 **Interactive Chat System:** Enables real-time text-based communication between users (signers and non-signers).  
-- 🧠 **Deep Learning Models:** Trained for continuous and dynamic gesture recognition.  
-- 👁️ **Computer Vision & NLP Integration:** Detects hand gestures and facial cues to improve translation accuracy.  
-- 🎨 **User-Friendly Interface:** Designed for accessibility, clarity, and ease of use.  
-- 🤝 **Community Collaboration:** Developed with insights from sign language experts to ensure linguistic and cultural precision.  
+Ishara combines **Machine Learning**, **Computer Vision**, and **Natural Language Processing (NLP)** to interpret Egyptian Sign Language and facilitate communication through both **translation** and **chatting** features.
+
+It enables:
+- Real-time sign language to text translation  
+- Two-way text communication  
+- Seamless integration between signers and non-signers
 
 ---
 
-## 🧰 Technologies Used
+## 🧩 System Components
+
+### 🧏‍♀️ 1. Translation App
+A camera-based application that detects and translates **continuous Egyptian Sign Language gestures** into text using deep learning models.
+
+**Features:**
+- Live video feed for gesture recognition  
+- Real-time translation from signs to text  
+- Option for text-to-sign language conversion (animated or symbolic)  
+- Built with **Python**, **TensorFlow**, **Keras**, and **OpenCV**
+
+
+### 💬 2. Chat App
+A web-based or desktop chat system that connects signers and non-signers.  
+It integrates directly with the translation system — enabling a signer to communicate naturally using gestures while the non-signer sees translated text.
+
+**Features:**
+- Real-time text communication  
+- Automatic translation of sign inputs  
+- Secure and simple interface built using **Flask**, **Streamlit**, or **FastAPI** with **WebSocket/Socket.IO**
+
+---
+
+## 🧠 Key Technologies
 
 | Category | Tools & Frameworks |
 |-----------|-------------------|
 | **Programming Language** | Python |
 | **Machine Learning** | TensorFlow, Keras |
 | **Computer Vision** | OpenCV |
-| **Natural Language Processing** | spaCy, NLTK (or related libraries) |
-| **Web Framework / Chat App** | Flask, Streamlit, or FastAPI + Socket.io / WebSocket |
-| **Database (Optional)** | SQLite / Firebase / MongoDB |
-| **Data & Utilities** | NumPy, pandas, scikit-learn |
+| **Natural Language Processing** | spaCy, NLTK |
+| **Web/Chat Framework** | Flask / Streamlit / FastAPI |
+| **Database (optional)** | SQLite / Firebase / MongoDB |
+| **Libraries** | NumPy, pandas, scikit-learn |
 
 ---
 
-## 🎥 Data Collection
+## 🎥 Data Collection & Training
 
-To ensure translation accuracy, the Ishara team created a **custom dataset of Egyptian Sign Language videos**.  
-These datasets were used to train, validate, and test the ML models for continuous gesture recognition.  
-
-**Workflow:**  
-1. Capture live sign language gestures through the camera feed.  
-2. Process frames using the trained ML model.  
-3. Display real-time translation and enable live chatting with other users.  
+The Ishara team created a **custom dataset** of continuous Egyptian Sign Language gestures.  
+- Data was collected through recorded videos of native signers.  
+- Each video frame was labeled and processed for ML training.  
+- Models were trained and validated for gesture accuracy and context recognition.
 
 ---
 
-## 💬 Chat System
+## 🧪 How It Works
 
-The chat system bridges communication between:  
-- 🧏‍♀️ **Signers:** who use the camera-based translation feature.  
-- 👨‍💻 **Non-signers:** who communicate using text input.  
-
-Messages can be exchanged seamlessly, allowing real-time understanding through translation and text.  
+1. **Translation App** captures video frames using a webcam.  
+2. The trained model identifies gestures and converts them into text.  
+3. **Chat App** sends translated messages to the other user.  
+4. Messages appear in real time — as text or signs — depending on the user’s mode.
 
 ---
-
 
 ## 👥 Team
 
