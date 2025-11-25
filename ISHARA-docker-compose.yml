@@ -1,0 +1,99 @@
+version: '3.8'
+services:
+  #1. FLASK AI BACKEND (PORT 5001)
+  flask-ai:
+    image: ishara-flask-ai
+    # Maps internal container port 5001 to host port 5001
+    ports:
+      - "5001:5001"
+    # Maps a named volume for persistent video uploads
+    volumes:
+      - flask_uploads:/app/uploads
+    # Keeps container running even if the process exits (for debugging)
+    restart: unless-stopped
+    # Environment variables (recommended practice is to load from a file)
+    environment:
+      - PYTHONUNBUFFERED=1 # Important for Python logs
+    networks:
+      - ishara-network
+
+#----------------------------------------------------
+#2. NODE.JS BACKEND (PORT 5000)
+  backend:
+    image: ishara-backend
+    ports:
+      - "5000:5000"
+    # Mount .env file for configuration (better than baking secrets into the image)
+    env_file:
+      - .env
+    # Volumes for any persistent storage (e.g., user avatars/files)
+    volumes:
+      - backend_uploads:/app/uploads
+    # Ensures the frontend only starts after this service is healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"] # Replace /api/health with a real endpoint
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    networks:
+      - ishara-network
+
+#----------------------------------------------------
+#3. FRONTEND (NGINX/REACT - PORT 8080)
+  frontend:
+    Image: ishara-chat-app
+    # Maps internal container port 80 to host port 8080
+    ports:
+      - "8080:80"
+    # Wait until both backend services are running/healthy before starting frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+      flask-ai:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - ishara-network
+
+  # 4. MONGODB (PORT 27017)
+  mongodb:
+    image: mongo:6
+    container_name: ishara-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+    networks:
+      - ishara-network
+
+  # 5. NGINX REVERSE PROXY
+  nginx:
+    image: nginx:alpine
+    container_name: ishara-nginx
+    ports:
+       - "80:80"
+    volumes:
+       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+       - frontend
+       - backend
+       - flask-ai
+    networks:
+       - ishara-network
+
+# -------------------
+# NETWORK
+networks:
+  ishara-network:
+    driver: bridge
+
+# -------------------
+# VOLUMES
+volumes:
+  flask_uploads:
+  backend_uploads:
+  mongo_data:

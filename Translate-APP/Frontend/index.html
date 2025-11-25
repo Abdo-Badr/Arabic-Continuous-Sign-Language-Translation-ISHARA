@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHARA Translate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="icon" type="image/x-icon" href="/logo.ico">
+</head>
+<body class="bg-gray-100 h-screen overflow-hidden">
+    <div id="app" class="flex flex-col min-h-screen">
+        <header class="bg-blue-500 text-white p-3 flex justify-between items-center">
+            <img src="/logo.ico" alt="Sign Language Converter" class="logo">
+            <div class="custom-select-wrapper">
+                <div id="customSelect" class="custom-select">
+                    <img id="selectedFlag" src="https://flagcdn.com/eg.svg" alt="Egypt">
+                    <span id="selectedLanguage">Egypt</span>
+                </div>
+                <div id="customSelectOptions" class="custom-select-options">
+                    <div data-value="Egypt" data-flag="https://flagcdn.com/eg.svg">
+                        <img src="https://flagcdn.com/eg.svg" alt="Egypt">
+                        <span>EG</span>
+                    </div>
+                    <div data-value="Qatar" data-flag="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/1024px-Flag_of_Qatar.svg.png">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/1024px-Flag_of_Qatar.svg.png" alt="Qatar">
+                        <span>QA</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="flex-grow container mx-auto p-4 flex flex-col items-center justify-between overflow-hidden">
+            <div class="flex space-x-2 p-4 mb-2">
+                <button id="uploadBtn" class="bg-indigo-500 text-white py-2 px-4 rounded-full flex items-center justify-center w-12 h-12 hover:bg-indigo-700">
+                    <i class="fas fa-upload"></i>
+                </button>
+                <button id="startRecordBtn" class="bg-green-500 text-white py-2 px-4 rounded-full flex items-center justify-center w-12 h-12 hover:bg-green-700">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button id="stopRecordBtn" class="bg-red-500 text-white py-2 px-4 rounded-full flex items-center justify-center w-12 h-12 hover:bg-red-700" disabled>
+                    <i class="fas fa-stop"></i>
+                </button>
+                <button id="repeatRecordBtn" class="bg-yellow-500 text-white py-2 px-4 rounded-full flex items-center justify-center w-12 h-12 hover:bg-yellow-700" disabled>
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            
+            <div class="flex space-x-2 w-full max-w-6xl">
+                <div id="videoContainer" class="bg-black flex justify-center items-center rounded-lg p-1 shadow w-1/2 h-96">
+                    <video id="video" class="w-full h-full rounded-lg" controls></video>
+                </div>
+                <div id="textContainer" class="bg-white p-4 rounded-lg shadow w-1/2 h-96 overflow-auto text-right">
+                    <p id="resultText" class="text-lg text-gray-800"></p>
+                </div>
+            </div>
+            <div class="flex mt-4">
+                <button id="convertBtn" class="bg-gray-500 text-white py-2 px-4 rounded cursor-not-allowed flex items-center justify-center " disabled>Translate</button>
+            </div>
+        </main>
+        
+        <footer class="bg-gray-700 text-white p-3 text-center">
+            <p>&copy; 2024 ISHARA Team</p>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+</body>
+</html>

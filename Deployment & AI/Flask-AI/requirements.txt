@@ -1,0 +1,9 @@
+flask
+flask-cors
+tensorflow
+mediapipe
+opencv-python
+moviepy
+numpy
+pandas
+tqdm

@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .form{
+    background-color: #fcfeff;
+    height: 550px;
+    width: 50%;
+    border-radius:15px;
+    justify-content: center;
+    height: 80%;
+  }
+  
+  .form,
+  .video {
+    width: 50%;
+  }
+  
+  .video img {
+    
+    width: 95%;
+    height: 550px;
+    margin-left: 10%;
+  }
+   
+  .l_input{
+    padding:1.2rem 1rem;
+    border-radius:10px;
+    width:90%;
+    background-color: #f9f9f9e9;
+    color: black;
+    
+  }
+  .l_input:focus{
+    outline: none;
+  }
+
+
+  
+  .btt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  /* .btt button { 
+    width : fit-content;
+    
+  } */

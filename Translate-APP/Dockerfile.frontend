@@ -1,0 +1,15 @@
+#Stage 1: Build the Node.js Application
+#Use a secure and lightweight Node.js base image
+FROM node:20-slim
+#Set the working directory inside the container
+WORKDIR /app
+#Copy package.json and package-lock.json to leverage Docker layer caching.
+COPY package*.json ./
+#Install project dependencies, omitting dev dependencies as this is production
+RUN npm install --omit=dev
+#Copy the rest of the source code
+COPY . .
+#The application runs on port 5000 (as specified in your .env and vite.config.js)
+EXPOSE 5000
+#Command to run the application using the "start" script defined in your package.json
+CMD ["npm", "start"]

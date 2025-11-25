@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    
+    
+  }
+  .form{
+    background-color: #2f3132;
+    width: 50%;
+    border-radius:15px;
+    justify-content: center;
+    
+  }
+  
+  .form,
+  .video {
+    width: 50%;
+  }
+  
+  .video img {
+    
+    width: 95%;
+    height: 550px;
+    
+    margin-left: 10%;
+  }
+   
+  .l_input{
+    padding:1.2rem 1rem;
+    border-radius:10px;
+    width:90%
+  }
+  .btt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }

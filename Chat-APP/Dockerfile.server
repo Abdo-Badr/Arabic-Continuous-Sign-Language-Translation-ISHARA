@@ -1,0 +1,22 @@
+# Stage 1: Build and Run the Node.js Application
+# Use a secure and lightweight Node.js base image
+FROM node:20-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to leverage Docker layer caching.
+# This step is only re-run if package.json changes.
+COPY package*.json ./
+
+# Install project dependencies
+RUN npm install
+
+# Copy the rest of the source code (including .env, and the backend directory)
+COPY . .
+
+# The application runs on port 5000, as defined in your .env file.
+EXPOSE 5000
+
+# Command to run the application using the "start" script defined in package.json
+CMD ["npm", "start"]

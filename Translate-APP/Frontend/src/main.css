@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select-wrapper span { 
+    color: white;
+    display: block;
+    margin-right: 25px;
+}
+
+.custom-select {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-select img {
+    width: 24px;
+    margin-right: 8px;
+}
+
+.custom-select-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    overflow: hidden;
+}
+
+.custom-select-options div {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-select-options div:hover {
+    background-color: #f1f1f1;
+}
+
+.custom-select-options img {
+    width: 24px;
+    margin-right: 8px;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#app {
+    height: 100%;
+}
+
+header {
+    flex-shrink: 0;
+}
+
+main {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+#videoContainer, #textContainer {
+    height: 384px; 
+    flex: 1;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    margin-bottom: 1rem;
+}
+
+.video {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+#textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+    background-color: #d7d5d5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    overflow: auto;
+}
+
+#resultText {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+}
+
+.logo {
+    height: 50px;
+    width: 104px;
+    object-fit: cover;
+}

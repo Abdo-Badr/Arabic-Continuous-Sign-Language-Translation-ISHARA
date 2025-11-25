@@ -1,0 +1,18 @@
+#Stage 1: Build the Flask Application
+#Use a secure and lightweight Python base image.
+FROM python:3.10-slim
+#Install system dependencies required for video and image processing (OpenCV/MoviePy)
+RUN apt-get update 
+RUN apt-get install -y ffmpeg libsm6 libxext6
+RUN rm -rf /var/lib/apt/lists/*
+#Set the working directory inside the container
+WORKDIR /app
+#Copy the requirements file and install dependencies first to leverage caching.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+#Copy the rest of the application code
+COPY . .
+#The application runs on port 5001, as proxied in your vite.config.js
+EXPOSE 5001
+#Command to run the Flask application
+CMD ["python3", "app.py"]
